@@ -7,13 +7,16 @@ $access_token = 'Gqae7mFgYuFurZ72d1wPGGjtZi7W72kkHYdplUFy3U+U4n+CEO5gKUQmnOT5EiG
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
+
+$text_ex = explode(' ', $events);
+
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text')
-		if (strstr($event,"hello")) {
+		if ($text_ex = "hello") {
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
