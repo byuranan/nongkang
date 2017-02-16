@@ -11,16 +11,16 @@ $events = json_decode($content, true);
 $text_ex = explode(' ', $events);
 
 // Validate parsed JSON data
-if (!is_null($events['events'])) {
+if (!is_null($text_ex['events'])) {
 	// Loop through each event
-	foreach ($events['events'] as $event) {
+	foreach ($text_ex['events'] as $text_ex) {
 		// Reply only when message sent is in 'text' format
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text')
-		if ($text_ex = "hello") {
+		if ($text_ex['type'] == 'message' && $text_ex['message']['type'] == 'text')
+		if ($text_ex == "hello") {
 			// Get text sent
-			$text = $event['message']['text'];
+			$text = $text_ex['message']['text'];
 			// Get replyToken
-			$replyToken = $event['replyToken'];
+			$replyToken = $text_ex['replyToken'];
 			// Test
 			
 			// Test
