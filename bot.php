@@ -18,8 +18,8 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Test
-			$text1 = if ($text = "hello");
-					echo "Done".;
+			$text1 = if $event['message']['text'];
+					echo "Done";
 			// Test
 			// Build message to reply back
 			$messages = [
