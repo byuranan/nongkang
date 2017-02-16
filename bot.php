@@ -18,7 +18,7 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Test
-			$text1 = if $event['message']['text'];
+			$text1 = if $event['message']['text'] == "hello";
 					echo "Done";
 			// Test
 			// Build message to reply back
