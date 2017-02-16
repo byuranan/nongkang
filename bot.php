@@ -1,8 +1,7 @@
 <?php
 $access_token = 'Gqae7mFgYuFurZ72d1wPGGjtZi7W72kkHYdplUFy3U+U4n+CEO5gKUQmnOT5EiGufBy8473V/QfSsw7z7c3qxSwp5RaJZwPcQmRdzMTtxnPcPdqRbozovd0+jbY9p/qShPFHOLxnVLEChriBWncGugdB04t89/1O/w1cDnyilFU=';
 //Test
-$text1 = if ($text = "hello");
-		echo "Done".;
+
 //Test
 // Get POST body content
 $content = file_get_contents('php://input');
@@ -18,7 +17,10 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-
+			// Test
+			$text1 = if ($text = "hello");
+					echo "Done".;
+			// Test
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
