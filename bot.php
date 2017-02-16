@@ -16,7 +16,7 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $events) {
 		// Reply only when message sent is in 'text' format
 		if ($events['type'] == 'message' && $events['message']['type'] == 'text')
-		if is_numeric(strrpos($events, "hello")) {
+		if strrpos($events, "hello") {
 			// Get text sent
 			$text = $events['message']['text'];
 			// Get replyToken
