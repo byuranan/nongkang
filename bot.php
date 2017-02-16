@@ -8,19 +8,19 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 
-$text_ex = explode(' ', $events);
+
 
 // Validate parsed JSON data
-if (!is_null($text_ex['events'])) {
+if (!is_null($events['events'])) {
 	// Loop through each event
-	foreach ($text_ex['events'] as $text_ex) {
+	foreach ($events['events'] as $events) {
 		// Reply only when message sent is in 'text' format
-		if ($text_ex['type'] == 'message' && $text_ex['message']['type'] == 'text')
-		if ($text_ex == "hello") {
+		if ($events['type'] == 'message' && $events['message']['type'] == 'text')
+		if ($events == "hello") {
 			// Get text sent
-			$text = $text_ex['message']['text'];
+			$text = $events['message']['text'];
 			// Get replyToken
-			$replyToken = $text_ex['replyToken'];
+			$replyToken = $events['replyToken'];
 			// Test
 			
 			// Test
