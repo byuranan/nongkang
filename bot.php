@@ -13,7 +13,9 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text')
-		if ($event['message']['text'] == 'hello') {
+		if (strstr($event,"hello"))
+			else {
+				echo "OK" } {
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
