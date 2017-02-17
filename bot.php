@@ -1,6 +1,7 @@
 <?php
 $access_token = 'Gqae7mFgYuFurZ72d1wPGGjtZi7W72kkHYdplUFy3U+U4n+CEO5gKUQmnOT5EiGufBy8473V/QfSsw7z7c3qxSwp5RaJZwPcQmRdzMTtxnPcPdqRbozovd0+jbY9p/qShPFHOLxnVLEChriBWncGugdB04t89/1O/w1cDnyilFU=';
 //Test
+session_start();
 
 //Test
 // Get POST body content
@@ -21,7 +22,8 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $events['replyToken'];
 			// Test
-			
+			$_SESSION["customer_id"]=$text;
+			echo $text;
 			// Test
 			// Build message to reply back
 			$messages = [
