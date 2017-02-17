@@ -1,35 +1,24 @@
 <?php
 $access_token = 'Gqae7mFgYuFurZ72d1wPGGjtZi7W72kkHYdplUFy3U+U4n+CEO5gKUQmnOT5EiGufBy8473V/QfSsw7z7c3qxSwp5RaJZwPcQmRdzMTtxnPcPdqRbozovd0+jbY9p/qShPFHOLxnVLEChriBWncGugdB04t89/1O/w1cDnyilFU=';
-//Test
-$text = "WTF"
-session_start();
-$_SESSION["text1"]=$text1;
-echo $text1;
-//Test
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
-
-
-
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
-	foreach ($events['events'] as $events) {
+	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
-		if ($events['type'] == 'message' && $events['message']['type'] == 'text') {
+		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			$text = $events['message']['text'];
+			$text = $event['message']['text'];
 			// Get replyToken
-			$replyToken = $events['replyToken'];
-			// Test
-			
-			// Test
+			$replyToken = $event['replyToken'];
+
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => "แม่มึงได้ผัวฝรั่งหรอ"
+				'text' => $text
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
