@@ -1,7 +1,4 @@
 <?
 session_start();
 echo $_SESSION["text"];
-if ($_SESSION == "hello");
-  echo "hi";
-else {echo "no";
-     }
+echo $_SESSION;
