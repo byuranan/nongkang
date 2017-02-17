@@ -22,7 +22,7 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $events['replyToken'];
 			// Test
-			$_SESSION["customer_id"]=$text;
+			$_SESSION["text"]=$text;
 			echo $text;
 			// Test
 			// Build message to reply back
