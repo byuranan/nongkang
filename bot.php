@@ -9,7 +9,7 @@ if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
-		if ($event['type'] == "Hi" && $event['message']['type'] == 'text') {
+		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => "พ่อมึงเป็นฝรั่งหรอ"
 			];}
-		else if ($event['type'] == "hii" && $event['message']['type'] == 'text') {
+		else if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
