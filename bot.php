@@ -8,7 +8,7 @@ $url = 'https://api.line.me/v2/bot/message/reply';
 $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
 // Validate parsed JSON data
-	if(strstr($events,"กาก")){
+	if(strstr($events['events'][0]['message']['text'],"กาก")){
  		 $post = array();
  		 $post['replyToken'] = $events['events'][0]['replyToken'];
  		 $post['messages'][0]['type'] = "text";
