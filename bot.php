@@ -61,6 +61,8 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
+				}
+			}
 		}
 	}
 }
