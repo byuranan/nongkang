@@ -12,7 +12,7 @@ $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $a
  		 $post = array();
  		 $post['replyToken'] = $events['events'][0]['replyToken'];
  		 $post['messages'][0]['type'] = "text";
- 		 $post['messages'][0]['text'] = rand(สวัสดี, ว่าไง);}
+ 		 $post['messages'][0]['text'] = rand(0,strlen("สวัสดี", "ว่าไง"));}
 	else if($events['events'][0]['message']['text'] == "ชื่ออะไร"){
   		 $post = array();
 	  	 $post['replyToken'] = $events['events'][0]['replyToken'];
