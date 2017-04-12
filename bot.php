@@ -6,13 +6,13 @@ $content = file_get_contents('php://input');
 $events = json_decode($content, true);
 $url = 'https://api.line.me/v2/bot/message/reply';
 $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
+$greeting = array("สวัสดี","ว่าไง");
 // Validate parsed JSON data
 	if(strstr($events['events'][0]['message']['text'],"ทนาย")){
  		 $post = array();
  		 $post['replyToken'] = $events['events'][0]['replyToken'];
  		 $post['messages'][0]['type'] = "text";
- 		 $post['messages'][0]['text'] = array_rand("สวัสดี", "ว่าไง");}
+ 		 $post['messages'][0]['text'] = array_rand($greeting, 1);}
 	else if($events['events'][0]['message']['text'] == "ชื่ออะไร"){
   		 $post = array();
 	  	 $post['replyToken'] = $events['events'][0]['replyToken'];
