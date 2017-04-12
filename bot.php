@@ -19,7 +19,7 @@ if (!is_null($events['events'])) {
 			$messages = [
 				'type' => 'text',
 				'text' => "พ่อมึงเป็นฝรั่งหรอ"
-			];
+			];}
 		else if ($event['type'] == "hii" && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
@@ -30,7 +30,7 @@ if (!is_null($events['events'])) {
 			$messages = [
 				'type' => 'text',
 				'text' => "สัส"
-			];
+			];}
 		else ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
@@ -41,7 +41,7 @@ if (!is_null($events['events'])) {
 			$messages = [
 				'type' => 'text',
 				'text' => $text
-			];
+			];}
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
@@ -61,8 +61,8 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
-				}
-			}
+				
+			
 		}
 	}
 }
