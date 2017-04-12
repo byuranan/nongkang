@@ -4,6 +4,10 @@ $access_token = 'Gqae7mFgYuFurZ72d1wPGGjtZi7W72kkHYdplUFy3U+U4n+CEO5gKUQmnOT5EiG
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
+			$url = 'https://api.line.me/v2/bot/message/reply';
+			
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+
 // Validate parsed JSON data
 	if($events['events'][0]['message']['text'] == "สวัสดี"){
  		 $post = array();
@@ -27,9 +31,7 @@ $events = json_decode($content, true);
  		 $post['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
 	}
 			// Make a POST Request to Messaging API to reply to sender
-			$url = 'https://api.line.me/v2/bot/message/reply';
-			json_encode($data);
-			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			
 
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
