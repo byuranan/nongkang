@@ -13,7 +13,7 @@ $randg = array_rand($greeting, 2);
  		 $post = array();
  		 $post['replyToken'] = $events['events'][0]['replyToken'];
  		 $post['messages'][0]['type'] = "text";
- 		 $post['messages'][0]['text'] = $randg;}
+ 		 $post['messages'][0]['text'] = shuffle($greeting);}
 	else if($events['events'][0]['message']['text'] == "ชื่ออะไร"){
   		 $post = array();
 	  	 $post['replyToken'] = $events['events'][0]['replyToken'];
