@@ -7,7 +7,7 @@ $events = json_decode($content, true);
 $url = 'https://api.line.me/v2/bot/message/reply';
 $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 $greeting = array("สวัสดี", "ว่าไง", "ปรึกษาปัญหาชีวิต กด 1");
-$randg = array_rand($greeting, 1);
+$randg = array_rand($greeting, 3);
 // Validate parsed JSON data
 	if(strstr($events['events'][0]['message']['text'],"ทนาย")){
  		 $post = array();
